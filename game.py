@@ -36,6 +36,7 @@ class IcyTowerGame:
 
     def run(self):
         while True:
+            self._clock.tick(100)
             for event in pygame_event.get():
                 if event.type == QUIT: sys.exit()
 

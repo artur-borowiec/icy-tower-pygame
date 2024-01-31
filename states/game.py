@@ -26,7 +26,17 @@ class GameState(State):
                 y=SCREEN_HEIGHT - IMAGE_PLAYER_HEIGHT,
                 platform_width=SCREEN_WIDTH - (WALL_WIDTH + 40)
             ),
+            self.generate_platforms(),
         ]
+
+    def generate_platforms(self):
+        return PlatformWallSprite(
+            screen=self.screen.screen,
+            image=self.image_store.platform_image.image,
+            x=SCREEN_WIDTH / 2,
+            y=SCREEN_HEIGHT / 2,
+            platform_width=SCREEN_WIDTH / 3
+        )
 
     def handle_event(self, event):
         for player in self.player_states:
